@@ -19,7 +19,7 @@ dev = [
 authors = [{email = "mattcoul7@gmail.com", name = "Matt Coulter"}]
 dependencies = []
 description = "A template package template."
-name = "ab-template-package"
+name = "ab-sqlalchemy-fastapi-http-exceptions"
 readme = "README.md"
 requires-python = ">=3.12,<4.0"
 version = "0.1.0"

@@ -1,8 +1,6 @@
 <div align="center">
 
-# Python Package Template
-
-The template repository for creating python packages, shared across auth-broker.
+# SQLAlchemy FastAPI HTTP Exceptions
 
 ![Python](https://img.shields.io/badge/Python-3.12-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![UV](https://img.shields.io/badge/UV-Fast-6E40C9?style=for-the-badge)
@@ -17,23 +15,9 @@ The template repository for creating python packages, shared across auth-broker.
 
 🦜🕸️
 
-[![CI](https://github.com/auth-broker/package-template/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/auth-broker/package-template/actions/workflows/ci.yaml)
+[![CI](https://github.com/auth-broker/package-sqlalchemy-fastapi-http-exceptions/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/auth-broker/package-sqlalchemy-fastapi-http-exceptions/actions/workflows/ci.yaml)
 
 </div>
-
-______________________________________________________________________
-
-## Template Checklist
-
-- \[ \] Rename module `src/ab_core/template` ->
-  `src/ab_core/your_package_name`
-- \[ \] Rename tests module `src/ab_core/template` ->
-  `src/ab_core/your_package_name`
-- \[ \] Update `pyproject.toml`: `[project]` section based on your package name
-  / versioning etc.
-- \[ \] Update `README.md` references of `python-package-template` ->
-  `your-package-name`
-- \[ \] Remove this section
 
 ______________________________________________________________________
 
@@ -54,10 +38,7 @@ ______________________________________________________________________
 
 ## Introduction
 
-This template repository aims to create a reusable package template which
-streamlines the creation and publishing of isolated python packages in auth-broker.
-This is aligned with the engineering vision @ auth-broker for better modularisation and
-reusability of code.
+Auto HTTP Exception Mapping for SQLAlchemy errors in FastAPI
 
 ______________________________________________________________________
 
@@ -117,7 +98,7 @@ Packages all share the same namespace `ab_core`. To import this package into
 your project:
 
 ```python
-from ab_core.template import placeholder_func
+from ab_core.sqlalchemy_fastapi_http_exceptions import placeholder_func
 ```
 
 We encourage you to make your package available to all of ab via this
@@ -136,7 +117,7 @@ command:
 **Using pip**:
 
 ```shell
-pip install python-package-template
+pip install ab-sqlalchemy-fastapi-http-exceptions
 ```
 
 **Using UV**
@@ -147,7 +128,7 @@ provide the full url. https://github.com/astral-sh/uv/issues/10140
 Add the dependency
 
 ```shell
-uv add python-package-template
+uv add ab-sqlalchemy-fastapi-http-exceptions
 ```
 
 **Using poetry**:
@@ -155,7 +136,7 @@ uv add python-package-template
 Then run the following command to install the package:
 
 ```shell
-poetry add python-package-template
+poetry add ab-sqlalchemy-fastapi-http-exceptions
 ```
 
 ### How tos
@@ -165,7 +146,7 @@ poetry add python-package-template
 ```python
 # Please update this based on your package!
 
-from ab_core.template import placeholder_func
+from ab_core.sqlalchemy_fastapi_http_exceptions import placeholder_func
 
 
 if __name__ == "__main__":
@@ -199,4 +180,4 @@ We publish to PyPI using Github releases. Steps are as follows:
    will trigger the `publish` workflow. In the Release window, type in the
    version number and it will prompt to create a new tag.
 1. Verify the release in
-   [PyPI](https://pypi.org/project/python-package-template/)
+   [PyPI](https://pypi.org/project/ab-sqlalchemy-fastapi-http-exceptions/)
