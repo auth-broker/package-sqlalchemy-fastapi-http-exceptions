@@ -17,7 +17,12 @@ dev = [
 
 [project]
 authors = [{email = "mattcoul7@gmail.com", name = "Matt Coulter"}]
-dependencies = []
+dependencies = [
+  "sqlalchemy>=2.0.0",
+  "fastapi>=0.115.0,<0.116",
+  "pydantic>=2.12.0",
+  "ab-database>=0.2.2",
+]
 description = "A template package template."
 name = "ab-sqlalchemy-fastapi-http-exceptions"
 readme = "README.md"
