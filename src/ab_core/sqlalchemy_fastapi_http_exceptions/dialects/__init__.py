@@ -1,10 +1,17 @@
 from .base import DialectExceptionMapper, GenericExceptionMapper
+from .mssql import MSSQLExceptionMapper
+from .mysql import MySQLExceptionMapper
+from .oracle import OracleExceptionMapper
 from .postgres import PostgresExceptionMapper
+from .sqlite import SQLiteExceptionMapper
 
-# Immutable registry
 _DIALECTS: tuple[DialectExceptionMapper, ...] = (
     PostgresExceptionMapper(),
-    GenericExceptionMapper(),  # keep last as fallback
+    MySQLExceptionMapper(),  # covers MySQL & MariaDB SA dialects (“mysql”, “mariadb” both surface as “mysql” in SA)
+    SQLiteExceptionMapper(),
+    MSSQLExceptionMapper(),
+    OracleExceptionMapper(),
+    GenericExceptionMapper(),  # fallback
 )
 
 
@@ -14,5 +21,4 @@ def get_mapper_by_name(name: str | None) -> DialectExceptionMapper:
         for mapper in _DIALECTS:
             if mapper.name == lowered:
                 return mapper
-    # explicit fallback, not silent
     return _DIALECTS[-1]
